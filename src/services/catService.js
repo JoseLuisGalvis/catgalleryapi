@@ -4,8 +4,7 @@ export const fetchCatImages = async (limit) => {
   try {
     const response = await fetch(`${API_URL}?limit=${limit}`, {
       headers: {
-        "x-api-key":
-          "live_QU6O6lDazNSv3bJAI5mT5B6XuI9D0gnh01Jkt9OIf4mID2X5c8s9sFpnKGW8EKnK", // Reemplaza con tu clave de API
+        "x-api-key": process.env.CAT_API_KEY,
       },
     });
     const data = await response.json();
