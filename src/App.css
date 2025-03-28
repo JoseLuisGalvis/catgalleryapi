@@ -1,38 +1,149 @@
-.App {
+/* Estilo General */
+/* Ejemplo de paleta de colores gatuna */
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f9f5f0; /* Un beige suave */
+  color: #333;
+}
+
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
   text-align: center;
+  padding: 20px;
+  background-color: #eee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Modo Oscuro */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body.dark-mode section {
+  background-color: #444444;
+  color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body.dark-mode .navbar-custom,
+body.dark-mode footer {
+  background-color: #1c1c1c !important;
+}
+
+body.dark-mode .navbar-brand img {
+  box-shadow: 0 10px 10px rgba(255, 255, 255, 0.4) !important;
+}
+
+body.dark-mode .hero-title {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Navbar */
+.navbar-custom {
+  background-color: #eee !important;
+}
+
+.navbar-brand img {
+  border-radius: 0.25em;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero */
+/* Contenedor principal que ocupa toda la pantalla */
+#hero,
+#contact {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Estiliza el iframe para que ocupe todo el fondo */
+.hero-iframe-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Contenedor de contenido encima del Iframe */
+.hero-content {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+/* Título */
+.hero-title {
+  position: relative;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
+/* Carrusel */
+.custom-carousel {
+  border-radius: 1em;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner {
+  border-radius: 1em !important;
+}
+.custom-carousel .carousel-item img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  border-radius: 1em;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-loader {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 400px;
   color: white;
+  font-size: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* Grid */
+.image-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-card img {
+  width: 100% !important;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
 }
